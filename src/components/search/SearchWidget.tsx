@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plane, Building2, Car, ArrowRightLeft, Search, Plus, Minus, ChevronDown } from 'lucide-react';
+import { Plane, Building2, Car, Package, Compass, Ship, ArrowRightLeft, Search, Plus, Minus, ChevronDown } from 'lucide-react';
 import { Airport, SearchTab, TripType, CabinClass } from '../../types';
 import AirportPicker from './AirportPicker';
 
@@ -45,9 +45,12 @@ export default function SearchWidget() {
   };
 
   const tabs = [
-    { id: 'flights' as SearchTab, label: 'Flights', icon: Plane },
     { id: 'hotels' as SearchTab, label: 'Stays', icon: Building2 },
+    { id: 'flights' as SearchTab, label: 'Flights', icon: Plane },
     { id: 'cars' as SearchTab, label: 'Cars', icon: Car },
+    { id: 'packages' as SearchTab, label: 'Packages', icon: Package },
+    { id: 'things' as SearchTab, label: 'Things to do', icon: Compass },
+    { id: 'cruises' as SearchTab, label: 'Cruises', icon: Ship },
   ];
 
   const cabinOptions: { value: CabinClass; label: string }[] = [
@@ -64,13 +67,13 @@ export default function SearchWidget() {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex-1 flex items-center justify-center gap-2 px-6 py-4 text-sm font-semibold transition-all ${
+            className={`flex-1 flex flex-col items-center justify-center gap-1 px-4 py-4 text-xs font-semibold transition-all ${
               activeTab === tab.id
-                ? 'text-blue-700 border-b-3 border-blue-700 bg-blue-50'
+                ? 'text-blue-800 border-b-[3px] border-blue-800'
                 : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
             }`}
           >
-            <tab.icon className="w-5 h-5" />
+            <tab.icon className="w-6 h-6" />
             {tab.label}
           </button>
         ))}
@@ -212,7 +215,7 @@ export default function SearchWidget() {
 
             <button
               onClick={handleSearch}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-xl text-base font-semibold flex items-center justify-center gap-2 transition-colors shadow-lg hover:shadow-xl"
+              className="w-full bg-[#1a1a6c] hover:bg-[#14144f] text-white py-3.5 rounded-full text-base font-semibold flex items-center justify-center gap-2 transition-colors shadow-lg hover:shadow-xl"
             >
               <Search className="w-5 h-5" />
               Search
@@ -264,7 +267,7 @@ export default function SearchWidget() {
                 </select>
               </div>
             </div>
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-xl text-base font-semibold flex items-center justify-center gap-2 transition-colors shadow-lg hover:shadow-xl">
+            <button className="w-full bg-[#1a1a6c] hover:bg-[#14144f] text-white py-3.5 rounded-full text-base font-semibold flex items-center justify-center gap-2 transition-colors shadow-lg hover:shadow-xl">
               <Search className="w-5 h-5" />
               Search
             </button>
@@ -307,7 +310,7 @@ export default function SearchWidget() {
               <input type="checkbox" className="w-4 h-4 rounded text-blue-600" />
               <span className="text-sm text-gray-600">Return car to a different location</span>
             </label>
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-xl text-base font-semibold flex items-center justify-center gap-2 transition-colors shadow-lg hover:shadow-xl">
+            <button className="w-full bg-[#1a1a6c] hover:bg-[#14144f] text-white py-3.5 rounded-full text-base font-semibold flex items-center justify-center gap-2 transition-colors shadow-lg hover:shadow-xl">
               <Search className="w-5 h-5" />
               Search
             </button>

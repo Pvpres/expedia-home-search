@@ -5,7 +5,7 @@ import Footer from '../components/common/Footer';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <GlobalNav />
       <HeroSection />
       <PromoSection />
