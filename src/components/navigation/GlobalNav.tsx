@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, ChevronDown, Menu, X, User, Heart, Briefcase, HelpCircle, Phone } from 'lucide-react';
+import { ChevronDown, Menu, X, MessageSquare } from 'lucide-react';
 
 export default function GlobalNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -8,40 +8,15 @@ export default function GlobalNav() {
 
   return (
     <header className="w-full">
-      <div className="bg-blue-900 text-white text-xs py-1.5 px-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <a href="#" className="hover:underline flex items-center gap-1">
-              <Phone className="w-3 h-3" />
-              <span>1-800-EXPEDIA</span>
-            </a>
-            <a href="#" className="hover:underline flex items-center gap-1">
-              <HelpCircle className="w-3 h-3" />
-              <span>Support</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-4">
-            <a href="#" className="hover:underline flex items-center gap-1">
-              <Globe className="w-3 h-3" />
-              <span>English</span>
-            </a>
-            <span className="text-blue-300">|</span>
-            <span>List your property</span>
-            <span className="text-blue-300">|</span>
-            <span>Trips</span>
-          </div>
-        </div>
-      </div>
-
-      <nav className="bg-blue-800 text-white shadow-lg">
+      <nav className="bg-white text-gray-800 shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-8">
               <Link to="/" className="flex items-center">
                 <div className="flex items-center">
-                  <svg viewBox="0 0 180 40" className="h-8 w-auto fill-current text-yellow-400">
+                  <svg viewBox="0 0 180 40" className="h-8 w-auto">
                     <text x="0" y="30" fontFamily="Arial, sans-serif" fontSize="28" fontWeight="bold">
-                      <tspan fill="#FBBF24">expedia</tspan>
+                      <tspan fill="#1a1a6c">expedia</tspan>
                     </text>
                     <circle cx="168" cy="12" r="4" fill="#FBBF24" />
                   </svg>
@@ -49,19 +24,13 @@ export default function GlobalNav() {
               </Link>
 
               <div className="hidden lg:flex items-center gap-1">
-                <NavLink label="Stays" />
-                <NavLink label="Flights" />
-                <NavLink label="Cars" />
-                <NavLink label="Packages" />
-                <NavLink label="Things to do" />
-                <NavLink label="Cruises" />
                 <div className="relative">
                   <button
-                    className="flex items-center gap-1 px-3 py-2 rounded-full hover:bg-blue-700 text-sm font-medium transition-colors"
+                    className="flex items-center gap-1 px-3 py-2 rounded-full hover:bg-gray-100 text-sm font-medium transition-colors text-gray-800"
                     onMouseEnter={() => setShowTripDropdown(true)}
                     onMouseLeave={() => setShowTripDropdown(false)}
                   >
-                    <span>More</span>
+                    <span>Shop travel</span>
                     <ChevronDown className="w-3.5 h-3.5" />
                   </button>
                   {showTripDropdown && (
@@ -70,32 +39,41 @@ export default function GlobalNav() {
                       onMouseEnter={() => setShowTripDropdown(true)}
                       onMouseLeave={() => setShowTripDropdown(false)}
                     >
-                      <DropdownItem label="Deals" />
-                      <DropdownItem label="Groups & meetings" />
-                      <DropdownItem label="Vacations" />
+                      <DropdownItem label="Stays" />
+                      <DropdownItem label="Flights" />
+                      <DropdownItem label="Cars" />
+                      <DropdownItem label="Packages" />
+                      <DropdownItem label="Things to do" />
+                      <DropdownItem label="Cruises" />
                     </div>
                   )}
                 </div>
               </div>
             </div>
 
-            <div className="hidden lg:flex items-center gap-3">
-              <button className="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-blue-700 text-sm font-medium transition-colors">
-                <Heart className="w-4 h-4" />
-                <span>Favorites</span>
+            <div className="hidden lg:flex items-center gap-4">
+              <button className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+                <span>USD</span>
               </button>
-              <button className="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-blue-700 text-sm font-medium transition-colors">
-                <Briefcase className="w-4 h-4" />
-                <span>My Trips</span>
+              <button className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+                List your property
               </button>
-              <button className="flex items-center gap-1.5 bg-white text-blue-800 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
-                <User className="w-4 h-4" />
-                <span>Sign in</span>
+              <button className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+                Support
               </button>
+              <button className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+                Trips
+              </button>
+              <button className="p-2 text-gray-700 hover:text-gray-900 transition-colors">
+                <MessageSquare className="w-5 h-5" />
+              </button>
+              <div className="w-8 h-8 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-semibold">
+                P
+              </div>
             </div>
 
             <button
-              className="lg:hidden text-white p-2"
+              className="lg:hidden text-gray-800 p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -104,19 +82,12 @@ export default function GlobalNav() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-blue-700 border-t border-blue-600 py-4 px-4">
+          <div className="lg:hidden bg-white border-t border-gray-200 py-4 px-4">
             <div className="flex flex-col gap-2">
-              <MobileNavLink label="Stays" />
-              <MobileNavLink label="Flights" />
-              <MobileNavLink label="Cars" />
-              <MobileNavLink label="Packages" />
-              <MobileNavLink label="Things to do" />
-              <MobileNavLink label="Cruises" />
-              <MobileNavLink label="Deals" />
-              <hr className="border-blue-600 my-2" />
-              <MobileNavLink label="My Trips" />
-              <MobileNavLink label="Favorites" />
-              <MobileNavLink label="Sign in" />
+              <MobileNavLink label="Shop travel" />
+              <MobileNavLink label="List your property" />
+              <MobileNavLink label="Support" />
+              <MobileNavLink label="Trips" />
             </div>
           </div>
         )}
@@ -125,13 +96,6 @@ export default function GlobalNav() {
   );
 }
 
-function NavLink({ label }: { label: string }) {
-  return (
-    <button className="px-3 py-2 rounded-full hover:bg-blue-700 text-sm font-medium transition-colors">
-      {label}
-    </button>
-  );
-}
 
 function DropdownItem({ label }: { label: string }) {
   return (
@@ -143,7 +107,7 @@ function DropdownItem({ label }: { label: string }) {
 
 function MobileNavLink({ label }: { label: string }) {
   return (
-    <button className="text-left px-3 py-2 rounded-lg hover:bg-blue-600 text-sm font-medium transition-colors">
+    <button className="text-left px-3 py-2 rounded-lg hover:bg-gray-100 text-sm font-medium text-gray-800 transition-colors">
       {label}
     </button>
   );
