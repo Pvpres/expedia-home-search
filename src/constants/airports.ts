@@ -1,0 +1,28 @@
+import { Airport } from '../types';
+
+export const AIRPORTS: Airport[] = [
+  { code: 'JFK', city: 'New York', name: 'John F. Kennedy International Airport', country: 'United States' },
+  { code: 'LAX', city: 'Los Angeles', name: 'Los Angeles International Airport', country: 'United States' },
+  { code: 'ORD', city: 'Chicago', name: "O'Hare International Airport", country: 'United States' },
+  { code: 'ATL', city: 'Atlanta', name: 'Hartsfield-Jackson Atlanta International Airport', country: 'United States' },
+  { code: 'DFW', city: 'Dallas', name: 'Dallas/Fort Worth International Airport', country: 'United States' },
+  { code: 'DEN', city: 'Denver', name: 'Denver International Airport', country: 'United States' },
+  { code: 'SFO', city: 'San Francisco', name: 'San Francisco International Airport', country: 'United States' },
+  { code: 'SEA', city: 'Seattle', name: 'Seattle-Tacoma International Airport', country: 'United States' },
+  { code: 'MIA', city: 'Miami', name: 'Miami International Airport', country: 'United States' },
+  { code: 'BOS', city: 'Boston', name: 'Boston Logan International Airport', country: 'United States' },
+  { code: 'LHR', city: 'London', name: 'London Heathrow Airport', country: 'United Kingdom' },
+  { code: 'CDG', city: 'Paris', name: 'Charles de Gaulle Airport', country: 'France' },
+  { code: 'NRT', city: 'Tokyo', name: 'Narita International Airport', country: 'Japan' },
+  { code: 'SIN', city: 'Singapore', name: 'Singapore Changi Airport', country: 'Singapore' },
+  { code: 'DXB', city: 'Dubai', name: 'Dubai International Airport', country: 'United Arab Emirates' },
+  { code: 'HKG', city: 'Hong Kong', name: 'Hong Kong International Airport', country: 'China' },
+  { code: 'FRA', city: 'Frankfurt', name: 'Frankfurt Airport', country: 'Germany' },
+  { code: 'AMS', city: 'Amsterdam', name: 'Amsterdam Schiphol Airport', country: 'Netherlands' },
+  { code: 'ICN', city: 'Seoul', name: 'Incheon International Airport', country: 'South Korea' },
+  { code: 'SYD', city: 'Sydney', name: 'Sydney Kingsford Smith Airport', country: 'Australia' },
+  { code: 'YYZ', city: 'Toronto', name: 'Toronto Pearson International Airport', country: 'Canada' },
+  { code: 'MEX', city: 'Mexico City', name: 'Mexico City International Airport', country: 'Mexico' },
+  { code: 'GRU', city: 'São Paulo', name: 'São Paulo–Guarulhos International Airport', country: 'Brazil' },
+  { code: 'CUN', city: 'Cancún', name: 'Cancún International Airport', country: 'Mexico' },
+];
