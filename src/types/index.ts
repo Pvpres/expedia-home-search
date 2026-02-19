@@ -30,7 +30,7 @@ export interface CarSearchParams {
   dropoffDate: string;
 }
 
-export type SearchTab = 'flights' | 'hotels' | 'cars';
+export type SearchTab = 'flights' | 'hotels' | 'cars' | 'packages' | 'things' | 'cruises';
 export type TripType = 'roundtrip' | 'oneway' | 'multicity';
 export type CabinClass = 'economy' | 'premium_economy' | 'business' | 'first';
 
