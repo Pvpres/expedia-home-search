@@ -1,0 +1,1 @@
+Cypress E2E: 10 passed, 0 failed out of 10 runs
